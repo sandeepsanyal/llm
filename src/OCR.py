@@ -13,12 +13,6 @@ response = ollama.generate(
     prompt=prompt,
     images=[image_file],
     options={
-        "output_path": output_path,
-        "base_size": 1024,
-        "image_size": 640,
-        "crop_mode": True,
-        "save_results": True,
-        "test_compress": True,
         "eval_mode": True
     }
 )
@@ -30,7 +24,7 @@ print("Extracted Text: \n{}\n\n".format(res))
 
 
 ### Summarize Extract
-prompt2 = f"{res}\n\nWhere is it talking about Mixture of Experts Architecture?"
+prompt2 = f"{res}\n\nConvert this into a well structured Markdown."
 # OCR processing
 response = ollama.chat(
     model=SUMMARY_MODEL,
